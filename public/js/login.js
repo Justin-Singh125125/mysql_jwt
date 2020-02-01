@@ -1,5 +1,5 @@
-$(document).ready(function() {
-	$('#login-btn').on('click', function(e) {
+$(document).ready(function () {
+	$('#login-btn').on('click', function (e) {
 		e.preventDefault();
 		console.log('test');
 
@@ -16,6 +16,10 @@ $(document).ready(function() {
 			method: 'POST',
 			url: '/api/user/login',
 			data: userObj
-		});
+		})
+			.then(function (resData) { console.log(resData) })
+			.catch(function (e) { console.log(e) })
+
+
 	});
 });
